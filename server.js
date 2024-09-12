@@ -5,7 +5,9 @@ const app = express();
 const port = process.env.PORT; // Alapértelmezett port, ha a .env fájl nem tartalmazza a PORT értéket
 var cors = require('cors')
 
-app.use(cors())
+app.use(cors({
+  origin: '*', // Vagy add meg a frontend domainjét, pl. 'http://example.com'
+}));
 
 
 // A "dist" mappa kiszolgálása
